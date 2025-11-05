@@ -1,6 +1,7 @@
 package Smoke;
 
 import Pages.Account.LoginPage;
+import Pages.Global.HeaderPage;
 import Pages.Home.InventoryPage;
 import TestCaseImplements.TestCase;
 import Util.DataProviderLogin;
@@ -16,10 +17,10 @@ public class LoginTest extends TestCase {
         loginPage.executeLogin(username, password);
 
         if (expectedLoginStatus == 1) { //LOGIN EXITOSO
-            InventoryPage inventoryPage = new InventoryPage(driver);
+            HeaderPage headerPage = new HeaderPage(driver);
             try {
-                inventoryPage.fluentWaitElement(inventoryPage.getSwagLabsLogo());
-                Assert.assertTrue(inventoryPage.getSwagLabsLogo().isDisplayed(), "Login exitoso para " + username);
+                headerPage.fluentWaitElement(headerPage.getSwagLabsLogo());
+                Assert.assertTrue(headerPage.getSwagLabsLogo().isDisplayed(), "Login exitoso para " + username);
             } catch (Exception e) {
                 Assert.fail("Login debio ser exitoso para " + username + " pero no se pudo encontrar el logo");
             }

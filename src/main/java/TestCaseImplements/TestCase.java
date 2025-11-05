@@ -30,8 +30,8 @@ public class TestCase {
 
     @AfterClass
     public void afterClass(){ //Cierra navegador una vez terminada toda la clase
-        if (driver != null){
-            driver.quit();
-        }
+       // if (driver != null){
+         //   driver.quit();
+        //}
     }
 }
